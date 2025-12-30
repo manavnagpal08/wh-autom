@@ -1,10 +1,9 @@
 import streamlit as st
 import urllib.parse
 
-# ScreenerPro shown first
-st.header("ScreenerPro – Promotion Test")
+st.header("🚀 ScreenerPro Bulk Promotion")
 
-WHATSAPP_MSG = """🚀 ScreenerPro – AI Hiring Automation (Comes First in HR Automation!)
+PROMO_MSG = """🚀 ScreenerPro – AI Hiring Automation (Comes First in HR Automation!)
 Screen resumes instantly, match skills using AI, and shortlist faster without manual work.
 
 ✔ 1000s of resumes → screened in seconds
@@ -14,16 +13,20 @@ Screen resumes instantly, match skills using AI, and shortlist faster without ma
 
 🔥 ScreenerPro leads first in HR automation tools
 Try it now and share with others 🙌
-
-App Link: https://candidate-screeneerpro.streamlit.app/
 """
 
-# URL encode
-encoded_msg = urllib.parse.quote(WHATSAPP_MSG)
+encoded_msg = urllib.parse.quote(PROMO_MSG)
 
-# One-click button (no extra link click)
-if st.button("🚀 Promote ScreenerPro via WhatsApp"):
-    st.markdown(
-        f'<meta http-equiv="refresh" content="0; url=whatsapp://send?text={encoded_msg}">',
-        unsafe_allow_html=True
-    )
+numbers = [
+"9353842710","9364897298","9440045717","9606917841","7070436444",
+"8651966081","7841970667","8978758935","8500825294","7569625062",
+"7900164314","7337261110","9972364704","9493501411","8428878844",
+"7207775039","9246400664","9246400663","9010149292","7019280372",
+"9380497511","9884675586","8008989758","8272080137","9032264747"
+]
+
+# Build multi-chat open links
+if st.button("📢 Send to All (1 Click)"):
+    for num in numbers:
+        url = f"whatsapp://send?phone={num}&text={encoded_msg}"
+        st.link_button(f"Send to {num}", url)
