@@ -1,5 +1,5 @@
 import streamlit as st
-import pyperclip  # optional, for auto-copy to clipboard on desktop
+
 import urllib.parse
 
 st.header("🚀 ScreenerPro Promotion")
